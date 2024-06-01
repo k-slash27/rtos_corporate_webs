@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <title>{{ meta.title }}</title>
+    <meta name="description" content="{{ meta.description }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="canonical" href="{{ meta.canonical }}">
+    <meta property="og:title" content="{{ meta.ogTitle }}">
+    <meta property="og:description" content="{{ meta.ogDescription }}">
+    <meta property="og:image" content="{{ meta.ogImage.url }}">
+    <link rel="icon" href="{{ meta.favicon.url }}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Coda:wght@400;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp">
+    <link rel="stylesheet" href="static/css/{{page}}.css" type="text/css">
+    <script type="text/javascript" src="//js.hs-scripts.com/{{ env.HUBSPOT_PORTAL_ID }}.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="static/js/menu.js"></script>
+    {% if page == 'contact' %}
+    <script type="text/javascript" src="static/js/contactForm.js"></script>
+    {% endif %}
+    {% if page == 'products' %}
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-T8RGMZXF');</script>
+    <!-- End Google Tag Manager -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    {% endif %}
+</head>
+
+{% if page == 'products' %}
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G3CPZX0ML9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-G3CPZX0ML9');
+</script>
+{% endif %}
+
+<body class="body">
+
+    {% if page == 'products' %}
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T8RGMZXF"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    {% endif %}
+
+    <header class="header">
+        <a href="/" class="logoa">
+            <img src="static/img/logo.svg" alt="SIMPLE" class="logo" width="348" height="133" priority />
+        </a>
+
+        <div>
+            <nav class="Menu_nav">
+                <ul class="Menu_items">
+                    <li>
+                        <a href="/" class="js-close">TOP</a>
+                    </li>
+                    <li>
+                        <a href="/news" class="js-close">ニュース</a>
+                    </li>
+                    <li>
+                        <a href="/business" class="js-close">事業内容</a>
+                    </li>
+                    <li>
+                        <a href="/products" class="js-close">製品</a>
+                    </li>
+                    <li>
+                        <a href="/contact" class="js-close">会社概要</a>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com/@robot-to-society" class="js-close" target="_blank">YouTubeチャンネル</a>
+                    </li>
+                </ul>
+                <button class="Menu_button Menu_close js-close">
+                    <img src="static/img/close.svg" alt="閉じる" width="24" height="24" />
+                </button>
+            </nav>
+            <button class="Menu_button js-open">
+                <img src="static/img/menu.svg" alt="メニュー" width="24" height="24" />
+            </button>
+        </div>
+    </header>

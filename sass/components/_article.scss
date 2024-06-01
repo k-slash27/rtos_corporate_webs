@@ -1,0 +1,219 @@
+.Article {
+  &_title {
+    font-size: 2.4rem;
+    margin-bottom: 24px;
+    text-align: left;
+  }
+  
+  &_description {
+    font-size: 0.9rem;
+    color: var(--color-text-sub);
+    margin: 24px 0;
+    text-align: left;
+  }
+  
+  &_meta {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-shrink: 1;
+    gap: 24px;
+    margin-bottom: 64px;
+  }
+  
+  &_thumbnail {
+    width: 100%;
+    height: auto;
+    margin-bottom: 64px;
+  }
+  
+  &_content *:first-child {
+    margin-top: 0;
+  }
+  
+  &_content > h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    border-bottom: 1px solid var(--color-border);
+    margin: 2.8rem 0 1rem;
+  }
+  
+  &_content > h2 {
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin: 2.8em 0 1rem;
+  }
+  
+  &_content > h3 {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin: 2.8rem 0 1rem;
+  }
+  
+  &_content > h4 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 2.8rem 0 1rem;
+  }
+  
+  &_content > h5 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 2.8rem 0 1rem;
+  }
+  
+  &_content > p {
+    margin: 2rem 0 0.5rem;
+    line-height: 2;
+  }
+  
+  &_content > pre {
+    overflow-x: auto;
+  }
+  
+  &_content pre > code {
+    background-color: var(--color-bg-code);
+    display: block;
+    overflow-x: auto;
+    padding: 16px;
+  }
+  
+  &_content div[data-filename]::before {
+    display: inline-block;
+    background-color: var(--color-bg-sub);
+    content: attr(data-filename);
+    margin: 1em 0 0;
+    font-family: menlo, inconsolata, monospace;
+    font-size: 0.8rem;
+    padding: 4px 16px;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+  }
+  
+  &_content ul,
+  &_content ol {
+    margin: 0.5rem 0 0.5rem 2rem;
+  }
+  
+  &_content > ul,
+  &_content > ol {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  &_content ul > li {
+    list-style: disc;
+  }
+  
+  &_content ol > li {
+    list-style: decimal;
+  }
+  
+  &_content li {
+    margin: 0.5rem 0;
+  }
+  
+  &_content a {
+    text-decoration: underline;
+  }
+  
+  &_content > figure > img {
+    max-width: 100%;
+    height: auto;
+    margin: 2rem 0;
+  }
+  
+  &_content > strong {
+    font-weight: bold;
+  }
+  
+  &_content > blockquote {
+    border-left: 4px solid var(--color-border);
+    padding-left: 1rem;
+    font-style: italic;
+    margin: 2rem 0;
+  }
+  
+  &_content > hr {
+    margin: 4rem 0;
+    height: 1px;
+    background-color: var(--color-border);
+    border: none;
+  }
+  
+  &_content > table {
+    width: 100%;
+    margin: 2rem 0;
+  }
+  
+  &_content > table th {
+    background-color: var(--color-bg-sub);
+    text-align: left;
+    padding: 1rem;
+  }
+  
+  &_content > table td {
+    text-align: left;
+    padding: 1rem;
+  }
+  
+  @media (max-width: 640px) {
+    &_title {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+  
+    &_description {
+      font-size: 0.9rem;
+      color: var(--color-text-sub);
+      margin: 24px 0 40px;
+    }
+  
+    &_meta {
+      display: flex;
+      align-items: center;
+      margin-bottom: 40px;
+      font-size: 0.9rem;
+    }
+  
+    &_thumbnail {
+      width: 100%;
+      height: auto;
+      margin-bottom: 40px;
+    }
+  
+    &_content {
+      width: 100%;
+    }
+  
+    &_content > h1 {
+      font-size: 1.5rem;
+      font-weight: bold;
+      border-bottom: 1px solid var(--color-border);
+      margin: 2.8rem 0 1rem;
+    }
+  
+    &_content > h2 {
+      font-size: 1.4rem;
+      font-weight: bold;
+      margin: 2.8em 0 1rem;
+    }
+  
+    &_content > h3 {
+      font-size: 1.3rem;
+      font-weight: bold;
+      margin: 2.8rem 0 1rem;
+    }
+  
+    &_content > h4 {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin: 2.8rem 0 1rem;
+    }
+  
+    &_content > h5 {
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin: 2.8rem 0 1rem;
+    }
+  }
+}

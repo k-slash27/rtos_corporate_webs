@@ -1,0 +1,37 @@
+{% set page = 'business' %}
+
+{{ include('layout/header.twig', {'meta': meta, 'page': page}) }}
+
+<main>
+    <section class="Hero_container">
+        <div>
+            <h1 class="Hero_title">Business</h1>
+            <p class="Hero_sub">事業内容</p>
+        </div><img alt="" class="Hero_bgimg" src="static/img/eyecatch_poster.jpg">
+    </section>
+    <div class="Sheet_container">
+        <div>
+            <ul>
+                {% for business in business.contents %}
+                <li class="page_list">
+                    <dl class="page_flex">
+                        <dt>
+                            <h2>{{ business.title }}</h2>
+                        </dt>
+                        <dt class="page_name">
+                            <img alt="" class="page_logo" src="">
+                        </dt>
+                        <dd class="page_description">{{ business.description }}</dd>
+                        <dd class="page_action">
+                            <a href="{{ business.link }}" class="ButtonLink_button" target="_blank" rel="noopener">サービスサイトへ</a>
+                        </dd>
+                    </dl>
+                    <img alt="" width="{{ business.image.width }}" height="{{ business.image.height }}" class="page_image" src="{{ business.image.url }}">
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</main>
+
+{{ include('layout/footer.twig')}}

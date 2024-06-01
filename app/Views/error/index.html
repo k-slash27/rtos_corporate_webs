@@ -1,0 +1,25 @@
+{% set page = 'top' %}
+
+{{ include('layout/header.twig', {'meta': meta, 'page': page}) }}
+
+<main>
+
+    <link rel="stylesheet" href="static/css/notfound.css" />
+    <section class="Hero_container">
+        <div>
+            <h1 class="Hero_title">ERROR</h1>
+        </div>
+        <img alt="" class="Hero_bgimg" src="static/img/img-mv.jpg" />
+    </section>
+    <div class="not-found_container">
+        <dl>
+            <dt class="not-found_title">予期せぬエラーが発生しました</dt>
+            <dd class="not-found_text">
+                あなたがアクセスしようとしたページは、現在エラーが発生しており、表示できません。<br />しばらく時間をおいてアクセスするか、復旧までお待ちください。
+            </dd>
+        </dl>
+    </div>
+
+</main>
+
+{{ include('layout/footer.twig')}}

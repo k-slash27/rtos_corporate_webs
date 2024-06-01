@@ -1,0 +1,29 @@
+{% set page = 'news' %}
+
+{{ include('layout/header.twig', {'meta': meta, 'page': page}) }}
+
+<main>
+    <section class="Hero_container">
+        <div>
+            <h1 class="Hero_title">News</h1>
+            <p class="Hero_sub">ニュース</p>
+        </div>
+        <img alt="" class="Hero_bgimg" src="static/img/img-molecules.jpg">
+    </section>
+    <div class="Sheet_container">
+        <h1 class="Article_title">{{ news.title }}</h1>
+        <div class="Article_meta">
+            <span class="Date_date">
+                <img alt="" width="16" height="16" src="static/img/clock.svg">
+                {{ news.published|date('Y/m/d') }}
+            </span>
+        </div>
+        <img alt="" class="Article_thumbnail" src="{{ news.thumbnail.url }}">
+        <div class="Article_content">{{ news.content | raw }}</div>
+        <div class="page_footer">
+            <a class="ButtonLink_button" href="/news">ニュース一覧へ</a>
+        </div>
+    </div>
+</main>
+
+{{ include('layout/footer.twig')}}

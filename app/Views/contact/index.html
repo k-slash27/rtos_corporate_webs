@@ -1,0 +1,103 @@
+{% set page = 'contact' %}
+
+{{ include('layout/header.twig', {'meta': env, 'meta': meta, 'page': page}) }}
+
+<main>
+    <section class="Hero_container">
+        <div>
+            <h1 class="Hero_title">Contact</h1>
+            <p class="Hero_sub">会社概要</p>
+        </div>
+        <img alt="" class="Hero_bgimg" src="static/img/img-aboutus.jpg">
+    </section>
+    <div class="Sheet_container">
+        <div>
+            <div class="page_subcontainer">
+                <h2 class="page_sectionTitleEn">企業情報</h2>
+                <dl class="page_info">
+                    <dt class="page_infoTitle">社名</dt>
+                    <dd class="page_infoDescription">株式会社RtoS</dd>
+                </dl>
+                <dl class="page_info">
+                    <dt class="page_infoTitle">英語表記</dt>
+                    <dd class="page_infoDescription">RtoS Co., Ltd.</dd>
+                </dl>
+                <dl class="page_info">
+                    <dt class="page_infoTitle">設立</dt>
+                    <dd class="page_infoDescription">2023年7月</dd>
+                </dl>
+                <dl class="page_info">
+                    <dt class="page_infoTitle">本社</dt>
+                    <dd class="page_infoDescription">〒400-0206<br>山梨県南アルプス市六科１４１２番地２９<br>ハイツ八田Ｂ１０２</dd>
+                </dl>
+                <dl class="page_info">
+                    <dt class="page_infoTitle">代表者</dt>
+                    <dd class="page_infoDescription">代表取締役 川村剛</dd>
+                </dl>
+                <dl class="page_info">
+                    <dt class="page_infoTitle">資本金</dt>
+                    <dd class="page_infoDescription">300万円</dd>
+                </dl>
+                <dl class="page_info">
+                    <dt class="page_infoTitle">事業内容</dt>
+                    <dd class="page_infoDescription">
+                        <ul>
+                            <li>自動草刈りロボットを用いた草刈りサービス</li>
+                            <li>ArduPilotを活用した無人機（マルチコプター, 固定翼機, VTOL, 滑空機, ボート, サブマリン, ローバー）の開発・周辺システム開発支援</li>
+                            <li>ドローンソフトウェア開発スクール・セミナー・ワークショップ開催</li>
+                        </ul>
+                    </dd>
+                </dl>
+                <dl class="page_info">
+                    <dt class="page_infoTitle">沿革</dt>
+                    <dd class="page_infoDescription">詳細は<a class="emphasis" href="/history">こちらのページ</a>をご覧ください</dd>
+                </dl>
+            </div>
+            <div class="page_subcontainer">
+                <h2 class="page_sectionTitleEn">お問い合わせフォーム</h2>
+                <p class="page_text">ご質問、ご相談は下記フォームよりお問い合わせください。<br>内容確認後、担当者より通常3営業日以内にご連絡いたします。</p>
+                <div class="ContactForm">
+                    <form class="ContactForm_form">
+                        <div class="ContactForm_horizontal">
+                            <div class="ContactForm_item">
+                                <label class="ContactForm_label" for="lastname">姓</label>
+                                <input class="ContactForm_textfield" id="lastname" type="text" name="lastname">
+                            </div>
+                            <div class="ContactForm_item">
+                                <label class="ContactForm_label" for="firstname">名</label>
+                                <input class="ContactForm_textfield" id="firstname" type="text" name="firstname">
+                            </div>
+                        </div>
+                        <div class="ContactForm_item">
+                            <label class="ContactForm_label" for="company">会社名</label>
+                            <input class="ContactForm_textfield" id="company" type="text" name="company">
+                        </div>
+                        <div class="ContactForm_item">
+                            <label class="ContactForm_label" for="email">メールアドレス</label>
+                            <input class="ContactForm_textfield" id="email" type="text" name="email">
+                        </div>
+                        <div class="ContactForm_item">
+                            <label class="ContactForm_label" for="message">メッセージ</label>
+                            <textarea class="ContactForm_textarea" id="message" name="message"></textarea>
+                        </div>
+                        <div class="ContactForm_actions">
+                            <p class="ContactForm_error"></p>
+                            <input class="ContactForm_button" type="submit" value="送信する">
+                        </div>
+                    </form>
+                    <!-- form送信成功時 -->
+                    <p class="ContactForm_success">
+                        お問い合わせいただき、ありがとうございます。
+                        <br />
+                        お返事まで今しばらくお待ちください。
+                    </p>
+                    <!-- /form送信成功時 -->
+                </div>
+                <input type="hidden" name="HUBSPOT_PORTAL_ID" value="{{ env.HUBSPOT_PORTAL_ID }}">
+                <input type="hidden" name="HUBSPOT_FORM_ID" value="{{ env.HUBSPOT_FORM_ID }}">
+            </div>
+        </div>
+    </div>
+</main>
+
+{{ include('layout/footer.twig')}}

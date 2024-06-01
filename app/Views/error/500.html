@@ -1,0 +1,26 @@
+{% set page = 'top' %}
+
+{{ include('layout/header.twig', {'meta': meta, 'page': page}) }}
+
+<main>
+
+    <link rel="stylesheet" href="static/css/notfound.css" />
+    <section class="Hero_container">
+        <div>
+            <h1 class="Hero_title">500</h1>
+            <p class="Hero_sub">Internal Server Error</p>
+        </div>
+        <img alt="" class="Hero_bgimg" src="static/img/img-mv.jpg" />
+    </section>
+    <div class="not-found_container">
+        <dl>
+            <dt class="not-found_title">ページを表示できません</dt>
+            <dd class="not-found_text">
+                あなたがアクセスしようとしたページを表示できませんでした。<br />しばらく時間をおいてアクセスしてください。
+            </dd>
+        </dl>
+    </div>
+
+</main>
+
+{{ include('layout/footer.twig')}}

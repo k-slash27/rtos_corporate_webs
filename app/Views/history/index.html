@@ -1,0 +1,33 @@
+{% set page = 'history' %}
+
+{{ include('layout/header.twig', {'meta': meta, 'page': page}) }}
+
+<main>
+    <section class="Hero_container">
+        <div>
+            <h1 class="Hero_title">History</h1>
+            <p class="Hero_sub">沿革</p>
+        </div><img alt="" class="Hero_bgimg" src="static/img/img-history.jpg">
+    </section>
+    <div class="Sheet_container">
+        <div class="page_bg">
+            <ul>
+                {% for history in history.contents %}
+                <li class="NewsListItem_list">
+                    <a class="NewsListItem_link" href="/news/{{ history.id }}">
+                        <img alt="" width="1200" height="630" class="NewsListItem_image" src="{{ history.thumbnail.url }}">
+                        <dl>
+                            <dt class="NewsListItem_title">
+                                <span class="Date_date">{{ history.published }}</span>
+                            </dt>
+                            <dd class="NewsListItem_meta">{{ history.title }}</dd>
+                        </dl>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</main>
+
+{{ include('layout/footer.twig')}}

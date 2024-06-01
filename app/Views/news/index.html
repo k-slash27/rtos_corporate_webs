@@ -1,0 +1,46 @@
+{% set page = 'news' %}
+
+{{ include('layout/header.twig', {'meta': meta, 'page': page}) }}
+
+<main>
+    <section class="Hero_container">
+        <div>
+            <h1 class="Hero_title">News</h1>
+            <p class="Hero_sub">ニュース</p>
+        </div>
+        <img alt="" class="Hero_bgimg" src="static/img/img-molecules.jpg">
+    </section>
+    <div class="Sheet_container">
+        <ul>
+            {% for news in news %}
+            <li class="NewsListItem_list">
+                <a class="NewsListItem_link" href="/news/{{ news.id }}">
+                    <img alt="" width="1200" height="630" class="NewsListItem_image" src="{{ news.thumbnail.url }}">
+                    <dl>
+                        <dt class="NewsListItem_title">{{ news.title }}</dt>
+                        <dd class="NewsListItem_meta">
+                            <span class="Date_date">
+                                <img alt="" width="16" height="16" src="static/img/clock.svg">
+                                {{ news.published|date('Y/m/d') }}
+                            </span>
+                        </dd>
+                    </dl>
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+        <ul class="Pagination_container">
+            {% for i in 1..pageCount %}
+            <li class="Pagination_list">
+                {% if i == current %}
+                <span class="Pagination_item Pagination_current">{{ i }}</span>
+                {% else %}
+                <a class="Pagination_item" href="/news/p/{{i}}">{{ i }}</a>
+                {% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</main>
+
+{{ include('layout/footer.twig')}}
