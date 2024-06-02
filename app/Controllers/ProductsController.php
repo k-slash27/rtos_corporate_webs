@@ -19,10 +19,17 @@ class ProductsController extends Controller
         $api = new Api();
         $meta = $api->getData('meta');
         
+        return $this->view('products/index', ['meta' => $meta, 'env' => $this->env]);
+    }
+
+    public function detail($uri) {
+        $api = new Api();
+        $meta = $api->getData('meta');
+        
         $dir = $_SERVER['DOCUMENT_ROOT'] . '/static/img/products/slider';
         $num = count(glob($dir . "/*"));
 
-        return $this->view('products/index', ['meta' => $meta, 'env' => $this->env, 'slideDir' => $dir, 'slideCount' => $num]);
+        return $this->view('products/'.$uri.'/index', ['meta' => $meta, 'env' => $this->env, 'slideDir' => $dir, 'slideCount' => $num]);
     }
 }
 
