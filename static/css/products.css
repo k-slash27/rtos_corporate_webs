@@ -1659,6 +1659,10 @@ main {
       -ms-flex-align: center;
           align-items: center;
 }
+.Products_prices .notes {
+  margin-top: 44px;
+  line-height: 2;
+}
 .Products_usecase {
   margin-top: 182px;
   margin-bottom: 227px;
