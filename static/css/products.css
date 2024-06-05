@@ -2100,16 +2100,16 @@ main {
   right: 80px;
   bottom: 53px;
   z-index: 999;
-  width: 272px;
+  width: 300px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  gap: 10px;
+  gap: 20px;
 }
 @media (max-width: 645px) {
   .cta {
-    width: 200px;
+    width: 250px;
     right: 20px;
     bottom: 15px;
   }
